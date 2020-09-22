@@ -1,28 +1,54 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NavToDo title="Welcome to Your to do" />
+     <ToDos title="Welcome to Your to do" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import NavToDo from "./components/NavToDo.vue";
+import ToDos from "./components/ToDos";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    NavToDo,
+    ToDos
+  },
+  data() {
+    return {
+      todosArray: [
+        {
+          id: 1,
+          title: "Todo One",
+          completed: false,
+        },
+        {
+          id: 2,
+          title: "Todo Two",
+          completed: true,
+        },
+        {
+          id: 3,
+          title: "Todo Three",
+          completed: false,
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
